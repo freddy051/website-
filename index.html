@@ -10,9 +10,9 @@
     <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#mission">Mission Statement</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact Info</a></li>
+            <li><a href="#mission" class="smooth-scroll">Mission Statement</a></li>
+            <li><a href="#about" class="smooth-scroll">About Me</a></li>
+            <li><a href="#contact" class="smooth-scroll">Contact Info</a></li>
         </ul>
     </nav>
 
@@ -23,7 +23,7 @@
         <p>At elite universities, students are often told that there are only a few set paths to success, and that deviating from these paths puts you at a disadvantage. Take, for example, the pressure many students feel to decide on a career in investment banking by the start of their sophomore year, or the constant pressure to network relentlessly to secure a job. The message is clear: if you don’t commit to one of these paths early enough, you’ll be left behind.</p>
         <p>However, many students fail to recognize the inherent value in simply being at a top-tier university and having a solid resume. These credentials alone can make them competitive for a wide variety of roles. It’s often the students who should be the least worried who worry the most—I know because I was one of them.</p>
         <p>I’m starting Harold Bergner Career Counseling because I want to help students alleviate the stress that comes with career planning. College is the best time of your life. You’re old enough to start to have an identity but young enough to not have the weight of real-world responsibilities. Outside of class and studying, it should be spent socializing and exploring genuine areas of interest, not forcing yourself to do things you don’t want to just to get “ahead” in your career.</p>
-        <p>While university career counselors can offer valuable guidance in some cases, they often present the recruitment process as a formula – do X, Y, and Z, and with your grades and resume, you’ll land the job. The truth? There’s no formula, and luck plays a huge role in landing any job offer. Does the exact wording of your resume really matter? Think about it from the perspective of a recruiter who has to read 200 of them – no! Is that one networking call going to push you over the edge - probably not. They push "straight-line methods" because that’s what they were taught to do, and sure, they work sometimes. But this approach isn’t the best fit for many students and offers no guarantee of success. It often leads students to pour all their energy into one narrow path, closing off other opportunities that might be a better fit.</p>
+        <p>While university career counselors can offer valuable guidance in some cases, they often present the recruitment process as a formula – do X, Y, and Z, and with your grades and resume, you’ll land the job. The truth? There’s no formula, and luck plays a huge role in landing any job offer. Does the exact wording of your resume really matter? Think about it from the perspective of a recruiter who has to read 200 of them – no! Is that one networking call going to push you over the edge? Probably not. They push "straight-line methods" because that’s what they were taught to do, and sure, they work sometimes. But this approach isn’t the best fit for many students and offers no guarantee of success. It often leads students to pour all their energy into one narrow path, closing off other opportunities that might be a better fit.</p>
         <p>What I offer to students that university career counselors cannot is context — context that is impossible to have while going through the process, context that I certainly lacked at the time. Some examples of context:</p>
         <ul>
             <li>It is possible to get a prestigious finance job with no networking and no prior finance experience.</li>
@@ -41,7 +41,6 @@
     <section id="about">
         <h2>About Me</h2>
         <p>I’m Harold Bergner, and I’ve created this counseling service to help college students navigate career choices...</p>
-        <!-- Add more content about you here -->
     </section>
 
     <!-- Contact Info Section -->
@@ -51,5 +50,21 @@
         <p>Phone: 123-456-7890</p>
         <p>Feel free to reach out to me for a free 30-minute consultation!</p>
     </section>
+
+    <script>
+        // Prevent the # in URL and scroll smoothly
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1); // Get the target section id
+                const targetSection = document.getElementById(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
