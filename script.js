@@ -1,3 +1,13 @@
+// Smooth scrolling without hash sticking in URL
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
 // Fade-in effect for sections on scroll
 const sections = document.querySelectorAll('.content-section');
 
