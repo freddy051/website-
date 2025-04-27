@@ -1,70 +1,129 @@
-/* Base Styles */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+/* Reset Styles */
+* {
     margin: 0;
     padding: 0;
-    background: #f8f9fa;
-    color: #333;
+    box-sizing: border-box;
 }
 
-nav {
-    background: #0056b3;
-    padding: 15px;
+/* Basic Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00274D;
+    padding: 15px 50px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    text-align: center;
 }
 
-nav ul {
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 20px;
+.nav-links li {
+    display: inline;
+    margin-left: 30px;
 }
 
-nav ul li a {
+.nav-links a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.nav-links a:hover {
+    color: #ffcc00;
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0, 39, 77, 0.8), rgba(0, 39, 77, 0.8)), url('https://images.unsplash.com/photo-1580894908361-3f5c72fcff38') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-h2 {
-    color: #0056b3;
+.hero-content h1 {
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
-section ul {
-    padding-left: 20px;
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
 }
 
+.hero-button {
+    padding: 15px 30px;
+    background: #ffcc00;
+    color: #00274D;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.hero-button:hover {
+    background: #e6b800;
+}
+
+/* Content Sections */
+.content-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 36px;
+    color: #00274D;
+    margin-bottom: 20px;
+}
+
+.content-section p, .content-section ul {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.highlights {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.highlights li {
+    margin-bottom: 10px;
+}
+
+/* Link Styling */
 a {
-    color: #0056b3;
+    color: #00274D;
 }
 
 a:hover {
-    text-decoration: underline;
-}
-
-html {
-    scroll-behavior: smooth;
+    color: #0056b3;
 }
