@@ -1,28 +1,21 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Basic styles for layout and design */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-    color: #333;
 }
 
-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 10px 20px;
-}
-
-header h1 {
-    font-size: 2em;
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
-    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -30,25 +23,34 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 18px;
 }
 
-nav ul li a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
-main {
-    padding: 20px;
-    text-align: center;
+/* Section styling */
+section {
+    padding: 50px 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+h2 {
+    color: #333;
+}
+
+/* Add some smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+section p {
+    line-height: 1.6;
 }
