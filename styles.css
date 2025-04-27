@@ -8,7 +8,7 @@
 /* Basic Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+    line-height: 1.7;
     background: #f9f9f9;
     color: #333;
     scroll-behavior: smooth;
@@ -28,7 +28,7 @@ body {
 
 .logo {
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -54,13 +54,13 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 90vh;
-    background: linear-gradient(rgba(0, 39, 77, 0.8), rgba(0, 39, 77, 0.8)), url('https://images.unsplash.com/photo-1580894908361-3f5c72fcff38') no-repeat center center/cover;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 39, 77, 0.7), rgba(0, 39, 77, 0.7)), url('https://images.unsplash.com/photo-1580894908361-3f5c72fcff38') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
+    color: white;
     padding: 20px;
 }
 
@@ -71,22 +71,6 @@ body {
 
 .hero-content p {
     font-size: 22px;
-    margin-bottom: 30px;
-}
-
-.hero-button {
-    padding: 15px 30px;
-    background: #ffcc00;
-    color: #00274D;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: background 0.3s ease;
-}
-
-.hero-button:hover {
-    background: #e6b800;
 }
 
 /* Content Sections */
@@ -106,7 +90,7 @@ body {
 }
 
 .content-section p, .content-section ul {
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 20px;
 }
 
