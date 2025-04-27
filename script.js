@@ -1,29 +1,6 @@
-// Smooth scrolling without hash sticking in URL
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').slice(1);
-        const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-// Fade-in effect for sections on scroll
-const sections = document.querySelectorAll('.content-section');
-
-window.addEventListener('scroll', () => {
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < window.innerHeight - 100) {
-            section.style.opacity = 1;
-            section.style.transform = "translateY(0)";
-        }
-    });
-});
-
-// Initial opacity and transform
-sections.forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = "translateY(50px)";
-    section.style.transition = "all 0.6s ease-out";
-});
+// Smooth scrolling without showing '#' in URL
+function smoothScroll(event, sectionId) {
+    event.preventDefault();
+    const target = document.getElementById(sectionId);
+    target.scrollIntoView({ behavior: 'smooth' });
+}
