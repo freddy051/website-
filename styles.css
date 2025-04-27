@@ -1,59 +1,61 @@
-/* Basic styles for layout and design */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harold Bergner Career Counseling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
 
-nav {
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 100;
-}
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 100;
+        }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
 
-nav a:hover {
-    text-decoration: underline;
-}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-/* Section styling */
-section {
-    padding: 50px 20px;
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        section {
+            padding: 50px 20px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-h2 {
-    color: #333;
-}
+        h2 {
+            color: #333;
+        }
 
-/* Add some smooth scrolling for anchor links */
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-section p {
-    line-height: 1.6;
-}
+        section p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
