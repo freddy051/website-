@@ -112,19 +112,6 @@ a:hover {
     color: #0056b3;
 }
 
-ul {
-  list-style-position: outside;  /* Keeps the bullet outside */
-  padding-left: 20px;  /* Adjust the left padding if needed */
-}
-
-li {
-  word-wrap: break-word;  /* Allows text to wrap properly */
-  margin-bottom: 10px;  /* Optional: Adds space between list items */
-}
-
-ul li {
-  position: relative;  /* Ensure the position of bullets is consistent */
-}
 
 
 
