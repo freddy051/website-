@@ -112,6 +112,22 @@ a:hover {
     color: #0056b3;
 }
 
+ul {
+  list-style-position: outside;  /* Keeps the bullet outside */
+  padding-left: 20px;  /* Adjust padding as necessary */
+  margin: 0;  /* Remove default margin */
+}
+
+li {
+  display: flex;  /* Makes the list item a flex container */
+  align-items: flex-start;  /* Aligns the content of the list item */
+  flex-wrap: wrap;  /* Allows the text to wrap */
+  margin-bottom: 10px;  /* Optional: Adds space between list items */
+}
+
+li::marker {
+  margin-right: 10px;  /* Adjust spacing between bullet and text */
+}
 
 
 
