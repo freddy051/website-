@@ -113,11 +113,15 @@ a:hover {
 }
 
 ul {
-  list-style-position: inside;
+  list-style-position: outside; /* Bullet stays outside the text block */
+  padding-left: 20px; /* Adjust to your desired spacing */
 }
 
 li {
-  margin-bottom: 10px; /* Adjust spacing between items */
+  display: inline-block; /* Makes the list item behave like a block element but inline */
+  margin-bottom: 10px; /* Adjust the spacing between items */
+  word-wrap: break-word; /* Allows text to break and wrap correctly */
 }
+
 
 
