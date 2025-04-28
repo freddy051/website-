@@ -112,3 +112,12 @@ a:hover {
     color: #0056b3;
 }
 
+ul {
+  list-style-position: inside;
+}
+
+li {
+  margin-bottom: 10px; /* Adjust spacing between items */
+}
+
+
