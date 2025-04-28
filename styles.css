@@ -111,3 +111,16 @@ a {
 a:hover {
     color: #0056b3;
 }
+
+section {
+  margin-bottom: 50px;
+}
+
+.custom-bullets {
+  padding-left: 20px;
+}
+
+.custom-bullets li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
