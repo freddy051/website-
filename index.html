@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,62 +7,73 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">Harold Bergner Career Counseling</div>
-        <ul class="nav-links">
-            <li><a href="#mission" class="nav-link">Mission</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Career Confidence Starts Here</h1>
-            <p>Now Offering Free 30 Minute Consultations</p>
+    <header>
+        <h1>Harold Bergner Career Counseling</h1>
+        <p class="subheadline">Now Offering Free 30-Minute Consultations</p>
+        <nav>
+            <ul>
+                <li><a href="#mission" onclick="smoothScroll(event, 'mission')">Mission</a></li>
+                <li><a href="#about" onclick="smoothScroll(event, 'about')">About</a></li>
+                <li><a href="#services" onclick="smoothScroll(event, 'services')">Services</a></li>  <li><a href="#contact" onclick="smoothScroll(event, 'contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="mission">
+        <h2>Mission Statement</h2>
+        <p>Dear Students,</p>
+        <p>
+        At elite universities, students are often told that there are only a few set paths to success, and that deviating from these paths puts you at a disadvantage...
+        </p>
+        <p>
+        However, many students fail to recognize the inherent value in simply being at a top-tier university and having a solid resume...
+        </p>
+        <ul class="custom-bullets">
+            <li>It is possible to get a prestigious finance job with no networking and no prior finance experience.</li>
+            <li>Companies aren’t looking to hire Albert Einstein. They’re hiring a 23-year-old kid. The bar for excellence is not that high.</li>
+            <li>You may not actually end up being happy with the job you’ve been working so hard to get.</li>
+            <li>You could have a 2.5 GPA and a thin resume and 99% of entry-level jobs would still consider you.</li>
+        </ul>
+        <p>I work with students at every stage of their college journey...</p>
+        <p>Sincerely,<br>Harold Bergner</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm Harold Bergner, and I’ve created this counseling service to help college students navigate career choices without the unnecessary stress...</p>
+    </section>
+
+    <section id="services">  <h2>Services</h2>
+        <div>
+            <h3>Services I Offer:</h3>
+            <ul class="custom-bullets">
+                <li>Career Exploration: There’s a lot out there—let’s figure out what fits you best.</li>
+                <li>Course Selection: Do what interests you, but college is a great place to build technical skills.</li>
+                <li>Resume Strengthening Strategies: Quantity &gt; quality in many cases.</li>
+                <li>Application Strategies: Apply everywhere.</li>
+                <li>Interview Strategies: Don’t overdo it—just be yourself.</li>
+                <li>Networking Strategies</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Services I Probably Won't Offer (But Depends on the Student):</h3>
+            <ul class="custom-bullets">
+                <li>In-depth Resume Review: Leave that to the University counselors.</li>
+                <li>Live Interview Prep: Behavioral, banking technicals, consulting cases, etc.</li>
+                <li>Inspiring Fear, Crippling Confidence, or Making Myself the Focal Point of Your Life</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Mission Statement Section -->
-    <section id="mission" class="content-section">
-        <h2>Mission Statement</h2>
-        <p>Dear Students,</p>
-        <p>At elite universities, students are often told that there are only a few set paths to success, and that deviating from these paths puts you at a disadvantage. Take, for example, the pressure many students feel to decide on a career in investment banking by the start of their sophomore year, or the constant pressure to network relentlessly to secure a job. The message is clear: if you don’t commit to one of these paths early enough, you’ll be left behind.</p>
-        <p>However, many students fail to recognize the inherent value in simply being at a top-tier university and having a solid resume. These credentials alone can make them competitive for a wide variety of roles. It’s often the students who should be the least worried who worry the most—I know because I was one of them.</p>
-        <p>I’m starting Harold Bergner Career Counseling because I want to help students alleviate the stress that comes with career planning. College is the best time of your life. You’re old enough to start to have an identity but young enough to not have the weight of real-world responsibilities. Outside of class and studying, it should be spent socializing and exploring genuine areas of interest, not forcing yourself to do things you don’t want to just to get “ahead” in your career.</p>
-        <p>While university career counselors can offer valuable guidance in some cases, they often present the recruitment process as a formula – do X, Y, and Z, and with your grades and resume, you’ll land the job. The truth? There’s no formula, and luck plays a huge role in landing any job offer. Does the exact wording of your resume really matter? Think about it from the perspective of a recruiter who has to read 200 of them – no! Is that one networking call going to push you over the edge? Probably not. They push "straight-line methods" because that’s what they were taught to do, and sure, they work sometimes. But this approach isn’t the best fit for many students and offers no guarantee of success. It often leads students to pour all their energy into one narrow path, closing off other opportunities that might be a better fit.</p>
-        <p>What I offer to students that university career counselors cannot is context — context that is impossible to have while going through the process, context that I certainly lacked at the time. Some examples of context:</p>
-        <ul class="highlights">
-            <li>• It is possible to get a prestigious finance job with no networking and no prior finance experience.</li>
-            <li>• Companies aren’t looking to hire Albert Einstein. They’re hiring a 23-year-old kid. The bar for excellence is not that high.</li>
-            <li>• You may not actually end up being happy with the job you’ve been working so hard to get (a friend of mine has already switched and two are actively trying to).</li>
-            <li>• You could have a 2.5 GPA and a thin resume and 99% of entry-level jobs would consider you.</li>
-        </ul>
-        <p>I work with students at every stage of their college journey. For freshmen and sophomores, we focus on how your major and course selection can guide your career exploration. For juniors and seniors, the focus shifts to tactical strategies for landing interviews and securing job offers.</p>
-        <p>My rates are significantly cheaper than the so-called “experts,” and I am offering free 30-minute consultations. How we work together will depend on what you need — some students may want regular live sessions, while others might just have occasional questions here and there. If you're interested in my services, please don’t hesitate to reach out.</p>
-        <p>And remember – you got this!</p>
-        <p>Sincerely, <br> Harold Bergner</p>
+    <section id="contact">
+        <h2>Contact Info</h2>
+        <p>Email: haroldbergner@gmail.com</p>
+        <p>Phone: 561-866-8373</p>
+        <p><a href="https://www.linkedin.com/in/harold-bergner-a81613199/" target="_blank">LinkedIn</a></p>
+        <p>Address: 1919 North Nash Street, Arlington, VA 22209</p>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="content-section">
-        <h2>About</h2>
-        <p>I'm Harold Bergner. After graduating from a top university and navigating the complex world of recruiting, I realized most students don't lack talent — they lack perspective. I'm passionate about offering honest, practical advice that goes beyond rehearsed scripts and checklists.</p>
-        <p>Outside of work, I love basketball, cooking, and mentoring students one-on-one. I started Harold Bergner Career Counseling to bring a human-centered, stress-reducing approach to career planning.</p>
-    </section>
-
-    <!-- Contact Info Section -->
-    <section id="contact" class="content-section">
-        <h2>Contact Me</h2>
-        <p>📧 <a href="mailto:haroldbergner@gmail.com">haroldbergner@gmail.com</a></p>
-        <p>📞 561-866-8373</p>
-        <p>🖇️ <a href="https://www.linkedin.com/in/harold-bergner-a81613199/" target="_blank">Connect on LinkedIn</a></p>
-        <p>📍 1919 North Nash Street, Arlington, VA 22209</p> 
-        <p>📄 <a href="https://drive.google.com/file/d/1xEG6tfQvTjvMXzbURu-mgRHOPD_nhDxl/view?usp=sharing" target="_blank">Resume</a></p>
-    </section>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
