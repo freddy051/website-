@@ -1,4 +1,4 @@
-// Existing smooth scrolling code
+// Smooth scrolling without hash sticking in URL
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -7,8 +7,8 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const navbarHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
         const targetPosition = targetSection.offsetTop - navbarHeight; // Calculate target position
 
-        // Close mobile menu if it's open
-        if (window.innerWidth <= 600) {
+        // Close mobile menu if it's open and we're on mobile
+        if (window.innerWidth <= 768) {
             document.querySelector('.nav-links').classList.remove('active');
         }
 
@@ -41,15 +41,18 @@ sections.forEach(section => {
 
 // Mobile menu toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Create and append hamburger menu button if it doesn't exist
+    // Create menu toggle button for mobile if it doesn't exist
     if (!document.querySelector('.menu-toggle')) {
         const navbar = document.querySelector('.navbar');
         const menuToggle = document.createElement('div');
         menuToggle.className = 'menu-toggle';
         menuToggle.innerHTML = '☰';
         navbar.appendChild(menuToggle);
-        
-        // Toggle menu when hamburger is clicked
+    }
+    
+    // Add click event to toggle menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
@@ -61,10 +64,28 @@ document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelector('.nav-links');
         const menuToggle = document.querySelector('.menu-toggle');
         
-        if (navLinks.classList.contains('active') && 
-            !event.target.closest('.nav-links') && 
-            event.target !== menuToggle) {
-            navLinks.classList.remove('active');
+        // Only proceed if we're in mobile view
+        if (window.innerWidth <= 768) {
+            if (navLinks && navLinks.classList.contains('active') && 
+                !event.target.closest('.nav-links') && 
+                event.target !== menuToggle) {
+                navLinks.classList.remove('active');
+            }
         }
     });
+});
+
+// Ensure menu displays correctly when resizing window
+window.addEventListener('resize', function() {
+    const navLinks = document.querySelector('.nav-links');
+    if (window.innerWidth > 768) {
+        // Ensure nav links are always visible on desktop
+        navLinks.classList.remove('active');
+        navLinks.style.display = '';
+    } else {
+        // On mobile, only show if active
+        if (!navLinks.classList.contains('active')) {
+            navLinks.style.display = 'none';
+        }
+    }
 });
