@@ -113,3 +113,147 @@
         margin: 8px 0;
     }
 }
+
+/* Additional styles to make the site mobile-responsive */
+
+/* Footer styling */
+footer {
+    background-color: #00274D;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Service groups styling */
+.service-group {
+    margin-bottom: 30px;
+}
+
+/* Contact info styling */
+.contact-info p {
+    margin-bottom: 12px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Base mobile styles first (mobile-first approach) */
+@media screen and (max-width: 768px) {
+    /* Navigation adjustments */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .nav-links li {
+        margin: 5px 10px;
+    }
+    
+    .nav-links a {
+        font-size: 16px;
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 18px;
+    }
+    
+    /* Content section adjustments */
+    .content-section {
+        margin: 40px 15px;
+        padding: 25px 20px;
+    }
+    
+    .content-section h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .content-section p, 
+    .content-section ul {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .content-section h2 {
+        font-size: 24px;
+    }
+    
+    .content-section {
+        padding: 20px 15px;
+    }
+}
+
+/* Hamburger menu for very small screens */
+@media screen and (max-width: 600px) {
+    .navbar {
+        position: relative;
+    }
+    
+    /* Add burger menu button */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+    }
+    
+    .nav-links {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+    
+    .nav-links li {
+        margin: 8px 0;
+    }
+}
