@@ -100,17 +100,6 @@ body {
 }
 
 /* Modified list styling */
-.highlights {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.highlights li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-}
-
 .highlights li::before {
     content: "•";
     display: inline-block;
@@ -118,6 +107,28 @@ body {
     text-align: right;
     margin-right: 0.5em;
     color: #333; /* Adjust bullet color if needed */
+}
+
+/* AFTER - Change to this CSS */
+.highlights {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.highlights li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.highlights li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333;
 }
 
 /* Link Styling */
