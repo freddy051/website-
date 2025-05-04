@@ -94,41 +94,49 @@ body {
     margin-bottom: 20px;
 }
 
-.highlights {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 /* Modified list styling */
 .highlights {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/* Modified list styling */
-.highlights {
-    list-style-type: none; /* Remove default bullet points */
-    padding-left: 0;
+    list-style: none; /* Reset all list styling */
+    padding-left: 0;   /* Remove default padding */
 }
 
 .highlights li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
+    display: flex;       /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 10px;  /* Spacing between list items */
 }
 
 .highlights li::before {
-    content: "•";
-    display: inline-block;
-    width: 1em;
-    text-align: right;
-    margin-right: 0.5em;
-    color: #333; /* Adjust bullet color if needed */
-    flex-shrink: 0;
+    content: "•";         /* The bullet point */
+    display: inline-block; /* Allow width/margin control */
+    width: 1em;            /* Bullet width */
+    text-align: right;     /* Right-align bullet within its width */
+    margin-right: 0.5em;   /* Spacing between bullet and text */
+    color: #333;           /* Bullet color */
+    flex-shrink: 0;       /* Prevent bullet from shrinking */
 }
 
 .highlights li span {
-    flex-grow: 1;
+    flex-grow: 1;        /* Allow text to expand and wrap properly */
+}
+
+/* Original ul styles (if you need them elsewhere) - Adjust as needed */
+ul {
+  list-style-position: outside;
+  padding-left: 0; /* Override any other padding */
+  margin: 0;
+}
+
+/* Original li styles (if you need them elsewhere) - Adjust as needed */
+li {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+li::marker {
+  margin-right: 10px;
 }
 
 /* Link Styling */
