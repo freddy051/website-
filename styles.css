@@ -105,6 +105,12 @@ body {
     padding-left: 0;
 }
 
+/* Modified list styling */
+.highlights {
+    list-style-type: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
 .highlights li {
     display: flex;
     align-items: flex-start;
@@ -118,6 +124,11 @@ body {
     text-align: right;
     margin-right: 0.5em;
     color: #333; /* Adjust bullet color if needed */
+    flex-shrink: 0;
+}
+
+.highlights li span {
+    flex-grow: 1;
 }
 
 /* Link Styling */
