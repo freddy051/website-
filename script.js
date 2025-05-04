@@ -4,7 +4,13 @@ document.querySelectorAll('.nav-link').forEach(link => {
         e.preventDefault();
         const targetId = this.getAttribute('href').slice(1);
         const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        const navbarHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
+        const targetPosition = targetSection.offsetTop - navbarHeight; // Calculate target position
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
     });
 });
 
