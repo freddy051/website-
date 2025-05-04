@@ -112,7 +112,7 @@ body {
 }
 
 .highlights li::before {
-    content: "â€¢";
+    content: "•";
     display: inline-block;
     width: 1em;
     text-align: right;
