@@ -1,122 +1,136 @@
-/* Add these responsive styles to your existing CSS */
-
-/* Base mobile styles first (mobile-first approach) */
-@media screen and (max-width: 768px) {
-    /* Navigation adjustments */
-    .navbar {
-        flex-direction: column;
-        padding: 15px 20px;
-    }
-    
-    .logo {
-        margin-bottom: 15px;
-        text-align: center;
-        font-size: 18px;
-    }
-    
-    .nav-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-    
-    .nav-links li {
-        margin: 5px 10px;
-    }
-    
-    .nav-links a {
-        font-size: 16px;
-    }
-    
-    /* Hero section adjustments */
-    .hero {
-        height: 60vh;
-    }
-    
-    .hero-content h1 {
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-    
-    .hero-content p {
-        font-size: 18px;
-    }
-    
-    /* Content section adjustments */
-    .content-section {
-        margin: 40px 15px;
-        padding: 25px 20px;
-    }
-    
-    .content-section h2 {
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-    
-    .content-section p, 
-    .content-section ul {
-        font-size: 16px;
-        margin-bottom: 15px;
-    }
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Small mobile devices */
-@media screen and (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 28px;
-    }
-    
-    .hero-content p {
-        font-size: 16px;
-    }
-    
-    .content-section h2 {
-        font-size: 24px;
-    }
-    
-    .content-section {
-        padding: 20px 15px;
-    }
+/* Base Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background: #f9f9f9;
+    color: #333;
+    scroll-behavior: smooth;
 }
 
-/* Hamburger menu for very small screens */
-@media screen and (max-width: 600px) {
-    .navbar {
-        position: relative;
-    }
-    
-    /* Add burger menu button */
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 24px;
-        color: white;
-    }
-    
-    .nav-links {
-        display: none; /* Hide by default */
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        padding-top: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex; /* Show when active */
-    }
-    
-    .nav-links li {
-        margin: 8px 0;
-    }
+/* Navigation Bar - Desktop First */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00274D;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Additional styles to make the site mobile-responsive */
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
 
-/* Footer styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Hide hamburger menu by default (desktop) */
+.menu-toggle {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0, 39, 77, 0.7), rgba(0, 39, 77, 0.7)), url('https://images.unsplash.com/photo-1580894908361-3f5c72fcff38') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 22px;
+}
+
+/* Content Sections */
+.content-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 36px;
+    color: #00274D;
+    margin-bottom: 20px;
+}
+
+.content-section p, .content-section ul {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.highlights {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.highlights li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.highlights li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333;
+}
+
+/* Link Styling */
+a {
+    color: #00274D;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Footer */
 footer {
     background-color: #00274D;
     color: white;
@@ -144,33 +158,43 @@ footer {
     text-decoration: underline;
 }
 
-/* Base mobile styles first (mobile-first approach) */
+/* MOBILE STYLES - Only apply below 768px */
 @media screen and (max-width: 768px) {
-    /* Navigation adjustments */
+    /* Navigation adjustments for mobile */
     .navbar {
         flex-direction: column;
         padding: 15px 20px;
+        align-items: flex-start;
     }
     
     .logo {
-        margin-bottom: 15px;
-        text-align: center;
-        font-size: 18px;
+        margin-bottom: 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
     }
     
     .nav-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: column;
         width: 100%;
+        display: none;
+        margin-top: 15px;
+    }
+    
+    .nav-links.active {
+        display: flex;
     }
     
     .nav-links li {
-        margin: 5px 10px;
-    }
-    
-    .nav-links a {
-        font-size: 16px;
+        margin: 8px 0;
+        margin-left: 0;
     }
     
     /* Hero section adjustments */
@@ -221,39 +245,5 @@ footer {
     
     .content-section {
         padding: 20px 15px;
-    }
-}
-
-/* Hamburger menu for very small screens */
-@media screen and (max-width: 600px) {
-    .navbar {
-        position: relative;
-    }
-    
-    /* Add burger menu button */
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        cursor: pointer;
-        font-size: 24px;
-        color: white;
-    }
-    
-    .nav-links {
-        display: none; /* Hide by default */
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        padding-top: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex; /* Show when active */
-    }
-    
-    .nav-links li {
-        margin: 8px 0;
     }
 }
