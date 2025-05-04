@@ -94,31 +94,31 @@ body {
     margin-bottom: 20px;
 }
 
-/* Styling for the highlights lists */
 .highlights {
-    list-style: none;  /* Remove default bullet points */
-    padding-left: 0;      /* Remove default padding */
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* Modified list styling */
+.highlights {
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .highlights li {
-    display: flex;          /* Use flexbox for layout */
-    align-items: flex-start;  /* Align items to the top */
-    margin-bottom: 10px;     /* Space between list items */
-}
-
-.highlights li span {
-    flex-grow: 1;          /* Allow the text to take up available space */
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
 }
 
 .highlights li::before {
-    content: "•";          /* The bullet point */
+    content: "â€¢";
     display: inline-block;
     width: 1em;
     text-align: right;
     margin-right: 0.5em;
-    color: #333;
+    color: #333; /* Adjust bullet color if needed */
 }
-
 
 /* Link Styling */
 a {
