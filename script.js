@@ -7,11 +7,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
         const navbarHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
         const targetPosition = targetSection.offsetTop - navbarHeight; // Calculate target position
 
-        // Close mobile menu if it's open and we're on mobile
-        if (window.innerWidth <= 768) {
-            document.querySelector('.nav-links').classList.remove('active');
-        }
-
         window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -39,53 +34,120 @@ sections.forEach(section => {
     section.style.transition = "all 0.6s ease-out";
 });
 
-// Mobile menu toggle functionality
+// Create mobile tabs navigation
 document.addEventListener('DOMContentLoaded', function() {
-    // Create menu toggle button for mobile if it doesn't exist
-    if (!document.querySelector('.menu-toggle')) {
-        const navbar = document.querySelector('.navbar');
-        const menuToggle = document.createElement('div');
-        menuToggle.className = 'menu-toggle';
-        menuToggle.innerHTML = '☰';
-        navbar.appendChild(menuToggle);
+    // Only create mobile tabs if we're on mobile
+    if (window.innerWidth <= 768) {
+        createMobileTabs();
     }
     
-    // Add click event to toggle menu
-    const menuToggle = document.querySelector('.menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        });
-    }
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const navLinks = document.querySelector('.nav-links');
-        const menuToggle = document.querySelector('.menu-toggle');
-        
-        // Only proceed if we're in mobile view
+    // Handle window resize events
+    window.addEventListener('resize', function() {
         if (window.innerWidth <= 768) {
-            if (navLinks && navLinks.classList.contains('active') && 
-                !event.target.closest('.nav-links') && 
-                event.target !== menuToggle) {
-                navLinks.classList.remove('active');
+            // Create mobile tabs if they don't exist
+            if (!document.querySelector('.mobile-tabs')) {
+                createMobileTabs();
+            }
+        } else {
+            // Remove mobile tabs if we're on desktop
+            const mobileTabs = document.querySelector('.mobile-tabs');
+            if (mobileTabs) {
+                mobileTabs.remove();
             }
         }
     });
+    
+    // Function to create mobile tabs
+    function createMobileTabs() {
+        // Don't create if already exists
+        if (document.querySelector('.mobile-tabs')) return;
+        
+        const mobileTabsNav = document.createElement('div');
+        mobileTabsNav.className = 'mobile-tabs';
+        
+        // Get all navigation links from main nav
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        // Create tab items with icons
+        const tabIcons = {
+            'mission': '🎯', 
+            'services': '🛠️',
+            'about': '👤',
+            'contact': '📱'
+        };
+        
+        navLinks.forEach(link => {
+            const tabLink = document.createElement('a');
+            const targetId = link.getAttribute('href').slice(1);
+            tabLink.href = `#${targetId}`;
+            
+            const icon = document.createElement('span');
+            icon.className = 'tab-icon';
+            icon.textContent = tabIcons[targetId] || '📄';
+            
+            const label = document.createElement('span');
+            label.textContent = link.textContent;
+            
+            tabLink.appendChild(icon);
+            tabLink.appendChild(label);
+            mobileTabsNav.appendChild(tabLink);
+            
+            // Add click event for smooth scrolling
+            tabLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = document.getElementById(targetId);
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('.mobile-tabs a').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+            });
+        });
+        
+        document.body.appendChild(mobileTabsNav);
+    }
 });
 
-// Ensure menu displays correctly when resizing window
-window.addEventListener('resize', function() {
-    const navLinks = document.querySelector('.nav-links');
-    if (window.innerWidth > 768) {
-        // Ensure nav links are always visible on desktop
-        navLinks.classList.remove('active');
-        navLinks.style.display = '';
-    } else {
-        // On mobile, only show if active
-        if (!navLinks.classList.contains('active')) {
-            navLinks.style.display = 'none';
-        }
+// Highlight active tab based on scroll position
+window.addEventListener('scroll', function() {
+    if (window.innerWidth <= 768) {
+        const scrollPosition = window.scrollY;
+        
+        // Get all sections
+        const sections = document.querySelectorAll('section[id]');
+        
+        // Find the current section in viewport
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            
+            if (scrollPosition >= sectionTop - navbarHeight - 50 && 
+                scrollPosition < sectionTop + sectionHeight - navbarHeight - 50) {
+                
+                const currentId = section.getAttribute('id');
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('.mobile-tabs a').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                
+                // Add active class to corresponding tab
+                const activeTab = document.querySelector(`.mobile-tabs a[href="#${currentId}"]`);
+                if (activeTab) {
+                    activeTab.classList.add('active');
+                }
+            }
+        });
     }
 });
